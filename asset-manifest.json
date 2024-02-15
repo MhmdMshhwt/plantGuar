@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/plantGuard/static/css/main.aff555f0.css",
-    "main.js": "/plantGuard/static/js/main.1adef922.js",
+    "main.js": "/plantGuard/static/js/main.31199de3.js",
     "static/js/592.1e21fe73.chunk.js": "/plantGuard/static/js/592.1e21fe73.chunk.js",
     "static/media/pexels-agnieszka-palmowska-631909.jpg": "/plantGuard/static/media/pexels-agnieszka-palmowska-631909.da07707cb2c62407d8e7.jpg",
     "index.html": "/plantGuard/index.html",
     "main.aff555f0.css.map": "/plantGuard/static/css/main.aff555f0.css.map",
-    "main.1adef922.js.map": "/plantGuard/static/js/main.1adef922.js.map",
+    "main.31199de3.js.map": "/plantGuard/static/js/main.31199de3.js.map",
     "592.1e21fe73.chunk.js.map": "/plantGuard/static/js/592.1e21fe73.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.aff555f0.css",
-    "static/js/main.1adef922.js"
+    "static/js/main.31199de3.js"
   ]
 }
