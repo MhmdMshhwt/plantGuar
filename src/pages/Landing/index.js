@@ -7,7 +7,7 @@ function Landing() {
     const navigate = useNavigate();
 
     const handleClick = () => {
-        navigate('/home');
+        navigate(`${process.env.PUBLIC_URL}/home`);
     };
 
     return (
@@ -37,7 +37,8 @@ function Landing() {
                             sx={{
                                 fontWeight: '700',
                                 fontSize: '32px',
-                                color: '#FFF'
+                                color: '#FFF',
+                                letterSpacing: '1.5px'
                             }}
                         >
                             PlantGuard
