@@ -26,7 +26,7 @@ const CreatorType = ({ setIsOpenThanks }) => {
   };
 
   const handleCancel = () => {
-    navigate("/home");
+    navigate(`${process.env.PUBLIC_URL}/home`);
   };
 
   return (

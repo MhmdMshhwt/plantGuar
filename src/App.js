@@ -29,11 +29,11 @@ function App() {
             <>
               <Navbar />
               <Routes>
-                <Route path="/" element={<Landing />} />
-                <Route path="/home" element={<Home />} />
-                <Route path="/feedback" element={<MakePlantGuardBetter />} />
-                <Route path="/signup" element={<SignUp />} />
-                <Route path="/login" element={<Login />} />
+                <Route path={`${process.env.PUBLIC_URL}/`} element={<Landing />} />
+                <Route path={`${process.env.PUBLIC_URL}/home`} element={<Home />} />
+                <Route path={`${process.env.PUBLIC_URL}/feedback`} element={<MakePlantGuardBetter />} />
+                <Route path={`${process.env.PUBLIC_URL}/signup`} element={<SignUp />} />
+                <Route path={`${process.env.PUBLIC_URL}/login`} element={<Login />} />
               </Routes>
               {/* <Footer /> */}
             </>

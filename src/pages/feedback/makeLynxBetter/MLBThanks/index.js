@@ -8,7 +8,7 @@ const MLBThanks = ({isOpenThanks, setIsOpenThanks}) => {
     const { theme } = useTheme();
     const navigate = useNavigate();
     const handleDiscoverClick = () => {
-        navigate("/home");
+        navigate(`${process.env.PUBLIC_URL}/home`);
     }
     return (
         <Modal 

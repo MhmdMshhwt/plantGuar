@@ -22,7 +22,7 @@ const Navbar = () => {
     const location = useLocation();
     
     const handleNavigate = (dest) => {
-        navigate(`/${dest}`);
+        navigate(`${process.env.PUBLIC_URL}/${dest}`);
     }
 
     const toggleDrawer = (anchor, open) => (event) => {
@@ -107,8 +107,8 @@ const Navbar = () => {
     );
     
     if (
-        pathname === "/" ||
-        pathname === "/signup" 
+        pathname === `${process.env.PUBLIC_URL}/` ||
+        pathname === `${process.env.PUBLIC_URL}/signup` 
       )
         return <div></div>;
 

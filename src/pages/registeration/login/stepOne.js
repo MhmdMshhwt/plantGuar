@@ -87,7 +87,7 @@ const Login = ({ onButtonClick }) => {
             type="submit"
             variant="contained"
             fullWidth
-            onClick={()=> navigate('/home')}
+            onClick={()=> navigate(`${process.env.PUBLIC_URL}/home`)}
             endIcon={
               <ChevronRight/>
             }
@@ -126,7 +126,7 @@ const Login = ({ onButtonClick }) => {
             You don't have an account!
           </Typography>
           <Typography
-            onClick={()=> navigate('/signup')}
+            onClick={()=> navigate(`${process.env.PUBLIC_URL}/signup`)}
             variant="body1"
             component={'button'}
             sx={{

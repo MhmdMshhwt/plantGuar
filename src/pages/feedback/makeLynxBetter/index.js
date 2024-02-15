@@ -18,7 +18,7 @@ const MakePlantGuardBetter = () => {
   return (
     <Box
       sx={{
-        bgcolor: theme.palette.lightgrey.lightgrey500,
+        bgcolor: theme.palette.lightgrey.lightgrey400,
       }}
     >
       <MLBThanks
