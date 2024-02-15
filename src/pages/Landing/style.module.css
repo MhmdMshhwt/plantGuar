@@ -1,0 +1,41 @@
+.landing{
+    min-height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative;
+
+    & .overlay{
+        min-height: 100vh;
+        width: 100%;
+        background: rgba(0, 0, 0, .7);    
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    & .content{
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2.5rem;
+        overflow: hidden;
+        align-self: stretch;
+        text-align: center;
+        padding: 1.5rem;
+        z-index: 1;
+        & .text{
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            /* padding: .5rem; */
+            z-index: 1;
+        }
+    }
+
+}
+
+

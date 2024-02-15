@@ -1,0 +1,36 @@
+.upload{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+}
+.primarySkills {
+    border-radius: 6px;
+    border: 1px dashed;
+    width: 100%;
+    height: 240px;
+    justify-content: center;
+    align-items: center;
+    & .primaryImg{
+        height: 100%;
+        width: 100%;
+        border-radius: 6px;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        position: relative;
+    
+    }
+}
+.content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & .uploadPhoto{
+        display: flex;
+        align-items: flex-start;
+        align-self: stretch;
+    }
+}
