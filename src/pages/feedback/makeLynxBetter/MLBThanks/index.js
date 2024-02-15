@@ -8,7 +8,7 @@ const MLBThanks = ({isOpenThanks, setIsOpenThanks}) => {
     const { theme } = useTheme();
     const navigate = useNavigate();
     const handleDiscoverClick = () => {
-        navigate("/discover");
+        navigate("/home");
     }
     return (
         <Modal 
@@ -87,14 +87,14 @@ const MLBThanks = ({isOpenThanks, setIsOpenThanks}) => {
                                 textAlign:'center'
                             }}
                         >
-                        You are helping to make the LYNX community a better place.    
+                        You are helping to make the PlantGuard community a better place.    
                         </Typography>
                     </Box>
                     <Button variant="contained"
                         onClick={handleDiscoverClick}
                         fullWidth
                     >
-                        Discover Other Creators
+                        Back to home
                     </Button>
                 </Box>
             </Box>
