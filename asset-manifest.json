@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/plantGuard.io/static/css/main.aff555f0.css",
-    "main.js": "/plantGuard.io/static/js/main.c8152bba.js",
+    "main.js": "/plantGuard.io/static/js/main.723efb8d.js",
     "static/js/592.1e21fe73.chunk.js": "/plantGuard.io/static/js/592.1e21fe73.chunk.js",
     "static/media/pexels-agnieszka-palmowska-631909.jpg": "/plantGuard.io/static/media/pexels-agnieszka-palmowska-631909.da07707cb2c62407d8e7.jpg",
     "index.html": "/plantGuard.io/index.html",
     "main.aff555f0.css.map": "/plantGuard.io/static/css/main.aff555f0.css.map",
-    "main.c8152bba.js.map": "/plantGuard.io/static/js/main.c8152bba.js.map",
+    "main.723efb8d.js.map": "/plantGuard.io/static/js/main.723efb8d.js.map",
     "592.1e21fe73.chunk.js.map": "/plantGuard.io/static/js/592.1e21fe73.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.aff555f0.css",
-    "static/js/main.c8152bba.js"
+    "static/js/main.723efb8d.js"
   ]
 }
