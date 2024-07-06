@@ -38,7 +38,7 @@ function TreatmentSuggestions({isDiseased, severity, treatment, reUpload}) {
                                     color: theme.palette.darkgrey.darkgrey500
                                 }}
                             >
-                                Severity 
+                                Causes 
                             </Typography>
                             <Typography
                                 variant="body1"
@@ -56,7 +56,25 @@ function TreatmentSuggestions({isDiseased, severity, treatment, reUpload}) {
                                     color: theme.palette.darkgrey.darkgrey500
                                 }}
                             >
-                                Treatment 
+                                Prevention 
+                            </Typography>
+                            <Typography
+                                variant="body1"
+                                sx={{
+                                    color: theme.palette.darkgrey.darkgrey600
+                                }}
+                            >
+                            {treatment}
+                            </Typography>
+                        </Box>
+                        <Box className={styles.resultItem}>
+                            <Typography
+                                variant="body2"
+                                sx={{
+                                    color: theme.palette.darkgrey.darkgrey500
+                                }}
+                            >
+                                Remedies 
                             </Typography>
                             <Typography
                                 variant="body1"

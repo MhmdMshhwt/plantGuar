@@ -1,0 +1,50 @@
+.delConfirm{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 40px 0px;
+    border-radius: 8px;
+}
+.content{
+    display: flex;
+    padding: 0px 24px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    align-self: stretch;
+}
+.frame{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    align-self: stretch;
+}
+.icon{
+    display: flex;
+    padding: 48px;
+    align-items: flex-start;
+    gap: 8px;
+    border-radius: 100px;
+    background: linear-gradient(160deg, #0F5FF7 9.58%, #9373FF 51.07%, #E81CFF 93.44%);
+}
+.text{
+    display: flex;
+    padding: 8px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    align-self: stretch;
+    text-align: center;
+}
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    align-self: stretch;
+}

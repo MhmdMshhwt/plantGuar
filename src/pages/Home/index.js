@@ -46,33 +46,61 @@ function Home() {
                 bgcolor: theme.palette.lightgrey.lightgrey400
             }}
         >
-            {/* <Navbar/> */}
-            <Typography
-                variant="body1"
+            <Box
                 sx={{
-                    fontWeight: '700',
-                    fontSize: '32px',
-                    p: '1rem 0px 2.5rem',
-                    letterSpacing: '1.5px',
+                    width:{
+                        xs: '100%',
+                        sm: '100%',
+                        md: '430px',
+                    },
                 }}
             >
-                PlantGuard
-            </Typography>
-            {/* Upload Component */}
-            {!selectedImage && !detectionResult && <ImageUpload onUpload={handleUpload} />}
+                {/* <Navbar/> */}
+                <Typography
+                    variant="body1"
+                    sx={{
+                        fontWeight: '700',
+                        fontSize: '32px',
+                        p: '1rem 0px',
+                        letterSpacing: '1.5px',
+                        textAlign: 'center',
+                    }}
+                >
+                    {!selectedImage && !detectionResult ? (
+                        "PlantGuard"
+                    ) : (
+                        "Results"
+                    )}
+                </Typography>
+                {!selectedImage && !detectionResult && 
+                    <Typography
+                        variant="body1"
+                        sx={{
+                            fontWeight: '400',
+                            fontSize: '18px',
+                            p: '0rem 0px 2.5rem',
+                            textAlign: 'center',
+                            // letterSpacing: '1.5px',
+                        }}
+                    >
+                        Upload images of your plants and unlock a world where instant insights and personalized treatment recommendations empower you to nurture thriving and resilient gardens.
+                    </Typography>
+                }
+                {/* Upload Component */}
+                {!selectedImage && !detectionResult && <ImageUpload onUpload={handleUpload} />}
 
-            {/* Processing Component */}
-            {isProcessing && <Processing />}
+                {/* Processing Component */}
+                {isProcessing && <Processing />}
 
-            {detectionResult && (
-                <TreatmentSuggestions
-                    isDiseased={detectionResult.isDiseased}
-                    severity={detectionResult.severity}
-                    treatment={detectionResult.treatment}
-                    reUpload={reUpload}
-                />
-            )}
-
+                {detectionResult && (
+                    <TreatmentSuggestions
+                        isDiseased={detectionResult.isDiseased}
+                        severity={detectionResult.severity}
+                        treatment={detectionResult.treatment}
+                        reUpload={reUpload}
+                    />
+                )}
+            </Box>
         </Box>
     )
 };

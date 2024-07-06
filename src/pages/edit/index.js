@@ -1,72 +1,19 @@
-import axios from "axios";
 import React, { useContext, useState } from "react";
 import styles from "./step1.module.css";
 import { Box, Button, TextField, Typography } from "@mui/material";
 import { ChevronLeft, ChevronRight } from "@mui/icons-material";
-import { useTheme } from "../../../context/theme-context";
+import { useTheme } from "../../context/theme-context";
 import { useNavigate } from "react-router-dom";
-import { UserContext } from "../../../context/user-context";
 
-const SignUp = ({ onButtonClick }) => {
+const Edit = ({ onButtonClick }) => {
   const { theme } = useTheme();
   const navigate = useNavigate();
-  const [userName, setUserName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const { user, setUser } = useContext(UserContext);
 
-  const handleUserNameChange = (event) => {
-    setUserName(event.target.value);
-    console.log(userName);
-  }
-  const handleEmailChange = (event) => {
-    setEmail(event.target.value);
-    console.log(email);
-  }
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
-    console.log(password);
-  }
+  const [formData, setFormData] = useState({
+    priorityCode: "",
+  });
+  const [ periorityCode, setPeriorityCode ] = useState();
 
-  const handleSubmit = async () => {
-    const data = {
-      userName: userName,
-      email: email,
-      password: password,
-    };
-  
-    console.log('Data to send:', data);
-  
-    try {
-      const response = await axios.post('http://localhost:3000/user/create', data, {
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      });
-  
-      if (response.status === 200) {
-        setUser(response.data.user);
-        navigate(`${process.env.PUBLIC_URL}/home`)
-      }
-      console.log('Success:', response.data);
-    } catch (error) {
-      if (error.response) {
-        // Server responded with a status other than 200 range
-        console.error('Error response:', error.response.data);
-        console.error('Error status:', error.response.status);
-        console.error('Error headers:', error.response.headers);
-      } else if (error.request) {
-        // Request was made but no response received
-        console.error('Error request:', error.request);
-      } else {
-        // Something else happened
-        console.error('Error message:', error.message);
-      }
-    }
-  };
-  
-
-  
   return (
     <Box className={styles.form}
       sx={{
@@ -112,13 +59,13 @@ const SignUp = ({ onButtonClick }) => {
             textDecoration: 'underline'
           }}
         >
-          Register
+          Edit your information
         </Typography>
         <TextField
           label="Enter User Name"
           name="uerName"
-          value={userName}
-          onChange={handleUserNameChange}
+          // value={}
+          // onChange={(e) => setPeriorityCode(e.target.value)}
           variant="outlined"
           className={styles.textField}
           fullWidth
@@ -132,8 +79,8 @@ const SignUp = ({ onButtonClick }) => {
         <TextField
           label="Enter Email"
           name="email"
-          value={email}
-          onChange={handleEmailChange}
+          // value={periorityCode}
+          // onChange={(e) => setPeriorityCode(e.target.value)}
           variant="outlined"
           className={styles.textField}
           fullWidth
@@ -148,8 +95,8 @@ const SignUp = ({ onButtonClick }) => {
           label="Enter Password"
           type="password"
           name="password"
-          value={password}
-          onChange={handlePasswordChange}
+          // value={periorityCode}
+          // onChange={(e) => setPeriorityCode(e.target.value)}
           variant="outlined"
           className={styles.textField}
           fullWidth
@@ -165,7 +112,7 @@ const SignUp = ({ onButtonClick }) => {
             type="submit"
             variant="contained"
             fullWidth
-            onClick={handleSubmit}
+            onClick={()=> navigate(`${process.env.PUBLIC_URL}/home`)}
             endIcon={
               <ChevronRight/>
             }
@@ -184,45 +131,12 @@ const SignUp = ({ onButtonClick }) => {
               }
             }}
           >
-            Register
+            Update
           </Button>
-        </Box>
-        <Box
-          sx={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            // gap: '.3rem'
-          }}
-        >
-          <Typography
-            variant="body1"
-            sx={{
-              textAlign: 'center',
-            }}
-          >
-            Have an account!
-          </Typography>
-          <Typography
-            onClick={()=> navigate(`${process.env.PUBLIC_URL}/login`)}
-            variant="body1"
-            component={'button'}
-            sx={{
-              textAlign: 'center',
-              textDecoration: 'underline',
-              fontWeight: '600',
-              color: theme.palette.secondary.main,
-              bgcolor: 'inherit',
-              border: 'none',
-              cursor: 'pointer',
-            }}
-          >
-            Login
-          </Typography>          
         </Box>
       </Box>
     </Box>
   );
 };
 
-export default SignUp;
+export default Edit;

@@ -19,13 +19,25 @@ const MakePlantGuardBetter = () => {
     <Box
       sx={{
         bgcolor: theme.palette.lightgrey.lightgrey400,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width:'100%',
       }}
     >
       <MLBThanks
         isOpenThanks={isOpenThanks}
         setIsOpenThanks={setIsOpenThanks}
       />
-      <Box className={styles.container}>
+      <Box className={styles.container}
+        sx={{
+          width:{
+              xs: '100%',
+              sm: '100%',
+              md: '430px',
+          },
+        }}
+      >
         <Box className={styles.arrow}></Box>
         <Logo />
         <CreatorType setIsOpenThanks={setIsOpenThanks} />

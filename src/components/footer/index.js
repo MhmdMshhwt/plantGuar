@@ -8,9 +8,10 @@ import { AppBar, BottomNavigationAction, Toolbar } from '@mui/material';
 export default function Footer() {
     const { theme } = useTheme();
     const { pathname } = useLocation();
-  
+    console.log(pathname);
+
     if (
-        pathname === "/"  
+        pathname === "plantGuard"  
     )
         return <div></div>;
     

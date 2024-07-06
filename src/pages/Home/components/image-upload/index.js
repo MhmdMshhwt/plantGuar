@@ -3,27 +3,22 @@ import styles from "./style.module.css";
 import { FileUploadOutlined } from "@mui/icons-material";
 import { useTheme } from "../../../../context/theme-context";
 import { useState } from "react";
-const ImageUpload = ({onUpload}) => {
+
+const ImageUpload = ({ onUpload }) => {
     const { theme, darkMode } = useTheme();
-    const [selectedImage, setSelectedImage] = useState();
+    const [selectedImages, setSelectedImages] = useState([]);
 
     const handleFileChange = (e) => {
-        const selectedFile = e.target.files[0];
-        // Process the selected file as needed
-        if (selectedFile) {
-          // Do something with the file
-          setSelectedImage(URL.createObjectURL(selectedFile));
-        }    
+        const files = Array.from(e.target.files);
+        const imageUrls = files.map(file => URL.createObjectURL(file));
+        setSelectedImages(imageUrls);
     };
 
     const handleUpload = () => {
-        // Check if an image is selected before proceeding
-        if (selectedImage) {
-          // Call the parent component function to handle the upload
-          onUpload(selectedImage);
+        if (selectedImages.length > 0) {
+            onUpload(selectedImages);
         } else {
-          // Optionally, provide feedback to the user if no image is selected
-          alert('Please select an image before uploading.');
+            alert('Please select at least one image before uploading.');
         }
     };
 
@@ -37,35 +32,34 @@ const ImageUpload = ({onUpload}) => {
             >
                 <Box className={styles.primaryImg}
                     sx={{
-                        backgroundImage: selectedImage
-                        ? `url(${selectedImage})`
+                        backgroundImage: selectedImages.length > 0
+                        ? `url(${selectedImages[0]})`
                         : "none",
                     }}
                 >
-                    {!selectedImage &&
+                    {selectedImages.length === 0 &&
                         <Box className={styles.content}>
-                            {/* <Box className={styles.uploadPhoto}> */}
-                                <input
+                            <input
                                 type="file"
                                 accept="image/*"
                                 id="imageInput"
                                 style={{ display: "none" }}
+                                multiple
                                 onChange={handleFileChange}
-                                />
-                                <Button
-                                    variant="text"
-                                    onClick={() => document.getElementById("imageInput").click()}
-                                    startIcon={<FileUploadOutlined />}
-                                    sx={{
-                                        color: darkMode
-                                        ? theme.palette.darkgrey.darkgrey300
-                                        : theme.palette.darkgrey.darkgrey400,
-                                        textTransform: "capitalize",
-                                    }}
-                                >
-                                    Upload Plant Image
-                                </Button>
-                            {/* </Box> */}
+                            />
+                            <Button
+                                variant="text"
+                                onClick={() => document.getElementById("imageInput").click()}
+                                startIcon={<FileUploadOutlined />}
+                                sx={{
+                                    color: darkMode
+                                    ? theme.palette.darkgrey.darkgrey300
+                                    : theme.palette.darkgrey.darkgrey400,
+                                    textTransform: "capitalize",
+                                }}
+                            >
+                                Upload Plant Images
+                            </Button>
                         </Box>
                     }
                 </Box>
@@ -80,4 +74,5 @@ const ImageUpload = ({onUpload}) => {
         </Box>
     );
 };
+
 export default ImageUpload;
