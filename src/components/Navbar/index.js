@@ -21,8 +21,12 @@ const Navbar = () => {
     const navigate = useNavigate();
     const { pathname } = useLocation();
     const location = useLocation();
-    const { user } = React.useContext(UserContext);
+    const { user, setUser } = React.useContext(UserContext);
     console.log(pathname);
+
+    const handlDelete = () => {
+        setUser({});
+    }
 
     const handleNavigate = (dest) => {
         navigate(`${process.env.PUBLIC_URL}/${dest}`);
@@ -116,7 +120,7 @@ const Navbar = () => {
                         </ListItem>
                         <ListItem disablePadding>
                             <ListItemButton
-                                onClick={() => handleNavigate('login')}
+                                    onClick={() => { handlDelete(); handleNavigate('login')}}
                             >
                                 <ListItemIcon>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -128,7 +132,7 @@ const Navbar = () => {
                         </ListItem>
                         <ListItem disablePadding>
                             <ListItemButton
-                                onClick={() => handleNavigate('login')}
+                                onClick={() => handlDelete()}
                             >
                                 <ListItemIcon>
                                     <Logout /> 

@@ -44,7 +44,7 @@ function App() {
                   <Route path={`${process.env.PUBLIC_URL}/login`} element={<Login />} />
                   <Route path={`${process.env.PUBLIC_URL}/settings`} element={<Settings />} />
                   <Route path={`${process.env.PUBLIC_URL}/edit`} element={<Edit />} />
-                  <Route path={`${process.env.PUBLIC_URL}/help`} element={<HelpPage />} />
+                  <Route path={`${process.env.PUBLIC_URL}/Help!`} element={<HelpPage />} />
                 </Routes>
                 {/* <Footer /> */}
               </>

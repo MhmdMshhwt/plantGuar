@@ -35,34 +35,36 @@ const SignUp = ({ onButtonClick }) => {
       password: password,
     };
   
+    setUser(data);
     console.log('Data to send:', data);
+    navigate(`${process.env.PUBLIC_URL}/home`)
   
-    try {
-      const response = await axios.post('http://localhost:3000/user/create', data, {
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      });
+    // try {
+    //   const response = await axios.post('http://localhost:3000/user/create', data, {
+    //     headers: {
+    //       'Content-Type': 'application/json'
+    //     }
+    //   });
   
-      if (response.status === 200) {
-        setUser(response.data.user);
-        navigate(`${process.env.PUBLIC_URL}/home`)
-      }
-      console.log('Success:', response.data);
-    } catch (error) {
-      if (error.response) {
-        // Server responded with a status other than 200 range
-        console.error('Error response:', error.response.data);
-        console.error('Error status:', error.response.status);
-        console.error('Error headers:', error.response.headers);
-      } else if (error.request) {
-        // Request was made but no response received
-        console.error('Error request:', error.request);
-      } else {
-        // Something else happened
-        console.error('Error message:', error.message);
-      }
-    }
+    //   if (response.status === 200) {
+    //     setUser(response.data.user);
+    //     navigate(`${process.env.PUBLIC_URL}/home`)
+    //   }
+    //   console.log('Success:', response.data);
+    // } catch (error) {
+    //   if (error.response) {
+    //     // Server responded with a status other than 200 range
+    //     console.error('Error response:', error.response.data);
+    //     console.error('Error status:', error.response.status);
+    //     console.error('Error headers:', error.response.headers);
+    //   } else if (error.request) {
+    //     // Request was made but no response received
+    //     console.error('Error request:', error.request);
+    //   } else {
+    //     // Something else happened
+    //     console.error('Error message:', error.message);
+    //   }
+    // }
   };
   
 
